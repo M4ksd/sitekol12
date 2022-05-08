@@ -14,19 +14,64 @@
             float: left; /* Выравнивание по правому краю */
           
         }
+        .L {
+            font-family: Pompadur, 'Comic Sans MS', cursive;
+        }
       
     </style>
 </head>
 <body>
-    <div class="layer3" >
+    <div class="layer3">
         <h3>Навігаційне меню сайта:</h3> <br>
         <p>  <a href="index.html"> <h4 style="background: #FFFACD; margin-bottom: 20px ">Сторінка на якій ви знаходитесь</h4></p> <br>
         <p>  <a href="index1.html" target="_blank"><h4 style="background: #FFFACD; margin-bottom: 20px ">Таблиця</h4></a></p> <br>
         <p>  <a href="index2.html" target="_blank"><h4 style="background: #FFFACD; margin-bottom: 20px ">Програмне Забезпечення</h4></a></p>
         <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
     </div>
-   
-  
-    
+    <form method="post" id="myform"></form>
+    <table  border="5px" bordercolor="	#000000" bgcolor="#7FFFD4" align="center" class="L">
+        <thead>
+            <tr>
+                <th>
+                    <h4> Назва поля</h4>
+                </th>
+                <th>
+                    <h4> Імя пармаетра</h4>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Прізвеще та Імя</td>
+                <td><input type="text" name="first_name" form="myform" required placeholder="Ваше імя"></td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td><input type="text" name="email" form="myform" placeholder="Ваша е-адреса"></td>
+            </tr>
+            <tr>
+                <td>Дата народження</td>
+                <td><input type="date" id="date" name="date" form="myform" required></td>
+            </tr>
+            <tr>
+                <td>Стать</td>
+                <td>
+                    <select  required>
+                        <option value=''>Чоловік</option>
+                        <option>Жінка</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" name="add" form="myform" />
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+
 </body>
 </html>
