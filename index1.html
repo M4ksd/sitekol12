@@ -4,21 +4,29 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        .layer3 {
+            height: 100%;
+            width: 300px; /* Ширина */
+            padding: 10px; /* Поля */
+            background: #808080; /* Колір фона */
+            border: 5px dashed black; /* Параметри рамки*/
+            float: left; /* Выравнивание по правому краю */
+          
+        }
+      
+    </style>
 </head>
 <body>
-    <form method="post" id="myform"></form>
-    <table>
-        <tr>
-            <td>
-                <input type="text" name="first_name" form="myform">
-            </td>
-            <td>
-                <input type="text" name="second_name" form="myform">
-            </td>
-            <td>
-                <input type="submit" name="add" form="myform" />
-            </td>
-        </tr>
-    </table>
+    <div class="layer3" >
+        <h3>Навігаційне меню сайта:</h3> <br>
+        <p>  <a href="index.html"> <h4 style="background: #FFFACD; margin-bottom: 20px ">Сторінка на якій ви знаходитесь</h4></p> <br>
+        <p>  <a href="index1.html" target="_blank"><h4 style="background: #FFFACD; margin-bottom: 20px ">Таблиця</h4></a></p> <br>
+        <p>  <a href="index2.html" target="_blank"><h4 style="background: #FFFACD; margin-bottom: 20px ">Програмне Забезпечення</h4></a></p>
+        <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    </div>
+   
+  
+    
 </body>
 </html>
