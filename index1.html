@@ -5,29 +5,98 @@
     <meta charset="utf-8" />
     <title></title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #main {
+            display: flex;
+            min-height: calc(100vh - 20vh);
+        }
+
+            #main > article {
+                flex: 1;
+            }
+
+            #main > nav,
+            #main > aside {
+                flex: 0 0 40vh;
+                background: linear-gradient(to bottom, #0000ff 21%, #3366ff 56%);
+            }
+            
+
+            #main > nav {
+                order: -1;
+            }
+
+        header, footer, article, nav, aside {
+            padding: 1em;
+        }
+
+        header, footer {
+            background: #7B68EE;
+            height: 10vh;
+            position: static;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: Pompadur, 'Comic Sans MS', cursive;
+        }
+
+        section {
+            color: white;
+            border-radius: 1em;
+            padding: 1em;
+            position: relative;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
         .layer3 {
-            height: 100%;
             width: 300px; /* Ширина */
-            padding: 10px; /* Поля */
-            background: #808080; /* Колір фона */
-            border: 5px dashed black; /* Параметри рамки*/
-            float: left; /* Выравнивание по правому краю */
-            font-family: Pompadur, 'Comic Sans MS', cursive;
-        }
-        .L {
-            font-family: Pompadur, 'Comic Sans MS', cursive;
-        }
-        body{
-            margin:1;
-        }
-        table {
-            width: 50%;
             height: 100%;
-           
+            padding: 10px; /* Поля */
+            background: #5EAFF2; /* Колір фона */
+            border: 5px dashed #4682B4; /* Параметри рамки*/
+            margin:0 auto;
+        }
+
+        .sign {
+            float: right; /* Выравнивание по правому краю */
             border: 1px solid #333; /* Параметры рамки */
             padding: 7px; /* Поля внутри блока */
             margin: 10px 0 5px 5px; /* Отступы вокруг */
             background: #f0f0f0; /* Цвет фона */
+        }
+
+        .sign1 {
+            float: left; /* Выравнивание по правому краю */
+            border: 1px solid #333; /* Параметры рамки */
+            padding: 7px; /* Поля внутри блока */
+            margin: 10px 0 5px 5px; /* Отступы вокруг */
+            background: #f0f0f0; /* Цвет фона */
+            height: 35%;
+            width: 35%;
+        }
+        .L {
+            font-family: Pompadur, 'Comic Sans MS', cursive;
+
+        }
+        body{
+            margin:0;
+        }
+        table {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #333; /* Параметры рамки */
+            padding: 7px; /* Поля внутри блока */
+            margin: 10px 0 5px 5px; /* Отступы вокруг */
+            background: #5EAFF2; /* Цвет фона */
         }
         .sign {
             float: right; /* Выравнивание по правому краю */
@@ -39,59 +108,85 @@
       
     </style>
 </head>
-<body bgcolor="#4682B4">
-    <div class="layer3" >
-        <h3>Навігаційне меню сайта:</h3> <br>
-        <p>  <a href="index.html"> <h4 style="background: #FFFACD; margin-bottom: 20px ">Апаратне Забезпечення</h4></p> <br>
-        <p>  <a href="index1.html" target="_blank"><h4 style="background: #FFFACD; margin-bottom: 20px ">Сторінка на якій ви знаходитесь</h4></a></p> <br>
-        <p>  <a href="index2.html" target="_blank"><h4 style="background: #FFFACD; margin-bottom: 20px ">Програмне Забезпечення</h4></a></p>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<body bgcolor="#4682B4"  vlink="#FFFFFF">
+    <header> <section> <center> <h1>Заповніть таблицю</h1></center></section></header>
+    <div id="main">
+        <article>
+            <form method="post" id="myform"></form>
+            <br><br><br><br><br><br><br><br><br><br>
+            <center>
+                <table border="5px" bordercolor="	#000000" bgcolor="#7FFFD4" align="center" class="L">
+                    <thead>
+                        <tr>
+                            <th>
+                                <h4> Назва поля</h4>
+                            </th>
+                            <th>
+                                <h4> Імя пармаетра</h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Прізвеще та Імя</td>
+                            <td><input type="text" name="first_name" form="myform" required placeholder="Ваше імя"></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail</td>
+                            <td><input type="text" name="email" form="myform" placeholder="Ваша е-адреса"></td>
+                        </tr>
+                        <tr>
+                            <td>Дата народження</td>
+                            <td><input type="date" id="date" name="date" form="myform" required></td>
+                        </tr>
+                        <tr>
+                            <td>Стать</td>
+                            <td>
+                                <select required>
+                                    <option value=''>Чоловік</option>
+                                    <option>Жінка</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2">
+                                <input type="submit" name="add" form="myform" value="Відправити" />
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </center>
+        </article>
+        <nav>
+            <div class="layer3">
+                <h3>Навігаційне меню сайта:</h3> <br>
+                <p>  <a href="index.html"> <h4 style="background: #417AA8; margin-bottom: 20px ">Апаратне забезпечення</h4></p> <br>
+                <p>  <a href="index1.html" target="_blank"><h4 style="background: #417AA8; margin-bottom: 20px ">Сторінка на якій ви знаходитесь</h4></a></p> <br>
+                <p>  <a href="index2.html" target="_blank"><h4 style="background: #417AA8; margin-bottom: 20px ">Програмне Забезпечення</h4></a></p>
+                <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+            </div>
+        </nav>
+        <aside class="L">
+            <center>
+                <h3>Мій коледж</h3>
+                <p><h3>↓</h3></p>
+                <p><a href="http://tehcollege.rv.ua/index.php" target="_blank ">Tehcollege</a></p>
+                <h3>Моя пошта</h3>
+                <p><h3>↓</h3></p>
+                <h3><a href="mailto:ostrovskii.maks@gmail.com" target="_blank">ostrovskii.maks@gmail.com</a></h3>
+                <h3>Мої соц мрежі </h3>
+                <p><h3>↓</h3></p>
+                <h3><a href="https://www.instagram.com/_.20maks22._/?hl=ru" target="_blank">Instagram</a></h3>
+                <p><h3>↓</h3></p>
+                <h3><a href="https://m.facebook.com/profile.php" target="_blank">Facebook</a></h3>
+            </center>
+        </aside>
     </div>
-    <form method="post" id="myform"></form>
-    <br><br><br><br><br><br><br><br><br><br>
-    <center><table  border="5px" bordercolor="	#000000" bgcolor="#7FFFD4" align="center" class="L">
-        <thead>
-            <tr>
-                <th>
-                    <h4> Назва поля</h4>
-                </th>
-                <th>
-                    <h4> Імя пармаетра</h4>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Прізвеще та Імя</td>
-                <td><input type="text" name="first_name" form="myform" required placeholder="Ваше імя"></td>
-            </tr>
-            <tr>
-                <td>E-mail</td>
-                <td><input type="text" name="email" form="myform" placeholder="Ваша е-адреса"></td>
-            </tr>
-            <tr>
-                <td>Дата народження</td>
-                <td><input type="date" id="date" name="date" form="myform" required></td>
-            </tr>
-            <tr>
-                <td>Стать</td>
-                <td>
-                    <select  required>
-                        <option value=''>Чоловік</option>
-                        <option>Жінка</option>
-                    </select>
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <th colspan="2">
-                    <input type="submit" name="add" form="myform" />
-                </th>
-            </tr>
-        </tfoot>
-    </table>
-    </center>
+    <footer><section> <center><h3>Це інформаційний сайт створений спеціально для лабораторної роботи</h3></center></section></footer>
+   
+    
 
 
 </body>
