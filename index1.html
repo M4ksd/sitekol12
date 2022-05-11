@@ -112,7 +112,7 @@
     <header> <section> <center> <h1>Заповніть таблицю</h1></center></section></header>
     <div id="main">
         <article>
-            <form method="post" id="myform"></form>
+            <form method="post" id="myform" action="mailto:ostrovskii.maks@gmail.com"></form>
             <br><br><br><br><br><br><br><br><br><br>
             <center>
                 <table border="5px" bordercolor="	#000000" bgcolor="#7FFFD4" align="center" class="L">
@@ -129,7 +129,7 @@
                     <tbody>
                         <tr>
                             <td>Прізвеще та Імя</td>
-                            <td><input type="text" name="first_name" form="myform" required placeholder="Ваше імя"></td>
+                            <td><input type="text" name="first_name_and_last_name" form="myform" required placeholder="Ваше імя"></td>
                         </tr>
                         <tr>
                             <td>E-mail</td>
@@ -142,9 +142,9 @@
                         <tr>
                             <td>Стать</td>
                             <td>
-                                <select required>
-                                    <option value=''>Чоловік</option>
-                                    <option>Жінка</option>
+                                <select name="sex" required>
+                                    <option  value="Man">Чоловік</option>
+                                    <option value="Wooman">Жінка</option>
                                 </select>
                             </td>
                         </tr>
